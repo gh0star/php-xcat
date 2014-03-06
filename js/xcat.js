@@ -27,6 +27,7 @@ function load_code_PZ(j){
 		str += "<option value="+i+">"+PZ[j][i]+"</option>"
 	}
 	$("select[name=variety]")[0].innerHTML = str;
+	$("select[name=contract]")[0].innerHTML = "<option value=0>合约</option>";
 }
 
 function load_code_YF(j){
@@ -41,9 +42,41 @@ function load_code_YF(j){
 function add_handle(){
 	//console.log(YF[code_JYS][code_PZ][code_YF][0]);
 	//console.log(YF[code_JYS][code_PZ][code_YF][1]);
+
+	if($("select[name=contract]")[0].value == 0){
+		alert_mgs("未选择合约" ,4000);
+		return;
+	}
+
+	if(isNaN($("input[name=alert_text]")[0].value) || $("input[name=alert_text]")[0].value.length == 0){
+		alert_mgs("告警条件应为数字且不能为空" ,4000);
+		return;
+	}
+
+	//add yf num
+	if(localStorage.yf_list == undefined){
+		localStorage.yf_list = code_JYS;
+		localStorage.name_list = code_PZ;
+	}
 }
 
-sd
+function alert_option_change(option_value){
+	if(option_value > "2"){
+		$("#alert_point").hide();
+	}else{
+		$("#alert_point").show();
+	}
+}
+
+function alert_mgs(content, time){
+	$('.alert-danger')[0].innerHTML = content;
+	$('.alert-danger').slideToggle();
+	setTimeout(function() {
+		$('.alert-danger').slideToggle();
+		$('.alert-danger')[0].innerHTML = "";
+	}, time);
+}
+
 
 function init(){
 	load_code_JYS();

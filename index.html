@@ -16,7 +16,7 @@
 
   <div class="container">
     <h1>XCat Project</h1>
-    <br/>  
+    <br/>
 
     <div class="panel panel-success">
       <div class="panel-heading">
@@ -36,9 +36,8 @@
 
   </div>
 
-
   <div id="add_box" class="container">
-
+    <div class="alert alert-danger" style="display: none;"></div>
     <div class="panel panel-success">
       <div class="panel-heading">
         <h3 class="panel-title">添加期货代码</h3>
@@ -46,8 +45,7 @@
       <div class="panel-body">
         <form class="form-inline" role="form">
           <label>交易所</label>
-          <select class="form-control" name="exchange" onchange="load_code_PZ(this.value);">
-          </select>
+          <select class="form-control" name="exchange" onchange="load_code_PZ(this.value);"></select>
 
           <label>品种</label>
           <select class="form-control" name="variety" onchange="load_code_YF(this.value);">
@@ -55,14 +53,29 @@
           </select>
 
           <label>合约</label>
-          <select class="form-control" name="contract" onchange="console.log(this.value);">
+          <select class="form-control" name="contract" onchange="code_YF = this.value;">
             <option value=0>合约</option>
           </select>
-          <br/><br/><br/>
+          <br/>
+          <br/>
+          <label>告警条件</label>
+          <select class="form-control" name="alert" onchange="alert_option_change(this.value)">
+            <option value=1>涨幅上限</option>
+            <option value=2>跌幅上限</option>
+            <option value=3>价格上限</option>
+            <option value=4>价格下限</option>
+          </select>
+          <div class="form-group">
+            <input type="text" class="form-control" name = "alert_text"/>
+          </div>
+          <span id="alert_point">%</span>
+          <br/>
+          <br/>
           <button class="btn btn-primary btn-lg" onclick="add_handle();return false;">添加</button>
         </form>
       </div>
     </div>
+
   </div>
 
   <div id="status_box" class="container well">
