@@ -1,0 +1,26 @@
+<script src="jquery.js"></script>
+
+<script src="http://finance.sina.com.cn/iframe/futures_info_cff.js"></script>
+
+
+<div id="jplayerId">
+</div>
+
+<script>
+
+  $.ajax({
+  	url: 'http://hq.sinajs.cn/?_=?&list=sz000510,sz002319,sz002381,sz002666,sz300192,sz300285,sh600135,sz002453,sz002094,sh601216',
+    dataType: "jsonp",
+    jsonp: "_",
+    type: "GET",
+    success: function(data){
+      console.log(data);
+    }
+  });
+
+  //$("#jplayerId").html('<embed type="application/x-mplayer2" loop="true" src="2.wav" id="player" autostart="true" uiMode="none" hidden="true"></embed>');
+
+  //audio = new Audio("2.wav");
+  //audio.play();
+  
+</script>

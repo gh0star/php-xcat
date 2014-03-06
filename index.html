@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XCat Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/code.js"></script>
+  <script src="js/xcat.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>XCat Project</h1>
+    <br/>  
+
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">操作</h3>
+      </div>
+      <div class="panel-body">
+
+        <div>
+          <button type="button" class="btn btn-primary btn-lg" onclick="alert_audio();">测试告警声音</button>
+          <button type="button" class="btn btn-primary btn-lg" onclick="$('#add_box').slideToggle()">添加期货列表</button>
+          <button type="button" class="btn btn-primary btn-lg" onclick="">查看实时数据</button>
+          <button type="button" class="btn btn-primary btn-lg" onclick="">停止查看数据</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div id="add_box" class="container">
+
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">添加期货代码</h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-inline" role="form">
+
+          <label>交易所</label>
+          <select class="form-control" name="exchange" onchange="load_code_PZ(this.value);">
+          </select>
+
+          <label>品种</label>
+          <select class="form-control" name="variety" onchange="load_code_YF(this.value);">
+            <option value=0>品种</option>
+          </select>
+
+          <label>合约</label>
+          <select class="form-control" name="contract" onchange="console.log(this.value);">
+            <option value=0>合约</option>
+          </select>
+          <br/><br/><br/>
+          <button class="btn btn-primary btn-lg" onclick="add_handle();">添加</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="status_box" class="container well">
+    <span id="sys_status">当前状态：停止获取数据</span>
+    <span id="sys_time">2014-04-05 12:12:12</span>
+    <span id="sys_text">获取数据</span>
+  </div>
+
+</body>
+</html>
