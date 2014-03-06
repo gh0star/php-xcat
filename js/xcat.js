@@ -38,10 +38,12 @@ function load_code_YF(j){
 	$("select[name=contract]")[0].innerHTML = str;
 }
 
-function add_handle(j){
-	code_YF = j;
-	console.log(YF[code_JYS][code_PZ][code_YF]);
+function add_handle(){
+	//console.log(YF[code_JYS][code_PZ][code_YF][0]);
+	//console.log(YF[code_JYS][code_PZ][code_YF][1]);
 }
+
+sd
 
 function init(){
 	load_code_JYS();

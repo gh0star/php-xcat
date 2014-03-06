@@ -45,7 +45,6 @@
       </div>
       <div class="panel-body">
         <form class="form-inline" role="form">
-
           <label>交易所</label>
           <select class="form-control" name="exchange" onchange="load_code_PZ(this.value);">
           </select>
@@ -60,7 +59,7 @@
             <option value=0>合约</option>
           </select>
           <br/><br/><br/>
-          <button class="btn btn-primary btn-lg" onclick="add_handle();">添加</button>
+          <button class="btn btn-primary btn-lg" onclick="add_handle();return false;">添加</button>
         </form>
       </div>
     </div>

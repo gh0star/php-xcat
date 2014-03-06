@@ -1,3 +1,18 @@
 1. 使用html5 本地数据库存告警记录
 2. 使用html5 web worker 进行获取数据
 3. 同时使用local的存储加快数据的获取
+
+
+--------------------------------------
+
+2014-03-06
+1.发现html本地web sql在关闭浏览器之后，就销毁了 无效
+2.确定使用localStorage
+3. localStorage字段说明
+
+    a. yf_list
+    b. name_list
+    c. low_price_list
+    d. high_price_list
+    e. low_width_list
+    f. low_price_list
