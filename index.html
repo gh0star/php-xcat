@@ -33,7 +33,6 @@
 
       </div>
     </div>
-
   </div>
 
   <div id="add_box" class="container">
@@ -53,7 +52,7 @@
           </select>
 
           <label>合约</label>
-          <select class="form-control" name="contract" onchange="code_YF = this.value;">
+          <select class="form-control" name="contract" onchange="code_YF = parseInt(this.value);">
             <option value=0>合约</option>
           </select>
           <br/>
@@ -71,17 +70,48 @@
           <span id="alert_point">%</span>
           <br/>
           <br/>
-          <button class="btn btn-primary btn-lg" onclick="add_handle();return false;">添加</button>
+          <button class="btn btn-primary btn-lg" id="btn-add" onclick="add_handle();return false;">添加</button>
+          <button class="btn btn-primary btn-lg"onclick="localStorage.clear();return false;">clear</button>
+          <button class="btn btn-primary btn-lg"onclick="console.log(localStorage);return false;">show</button>
         </form>
       </div>
     </div>
 
   </div>
 
-  <div id="status_box" class="container well">
-    <span id="sys_status">当前状态：停止获取数据</span>
-    <span id="sys_time">2014-04-05 12:12:12</span>
-    <span id="sys_text">获取数据</span>
+  <div class="container">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">告警列表</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>名称</th>
+              <th>最新价</th>
+              <th>开盘价</th>
+              <th>最高价</th>
+              <th>最低价</th>
+              <th>告警条件</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div id="status_box" class="container well">
+      <span id="sys_status">当前状态：停止获取数据</span>
+      <span id="sys_time">2014-04-05 12:12:12</span>
+      <span id="sys_text">获取数据</span>
+    </div>
+
   </div>
 
 </body>
