@@ -24,7 +24,28 @@ function test(){
   $('#test')[0].innerHTML = a++;
 }
 
-num = setInterval(test, 100)
+//num = setInterval(test, 100)
+
+
+function jsonp_test2(){
+    $.getScript("http://hq.sinajs.cn/?_="+new Date().getTime()+"&list=" + localStorage.yf_list, function(data){
+        
+    });
+}
+
+function jsonp_test(){
+    yf_list = localStorage.yf_list;
+    $.ajax({
+        url: 'http://hq.sinajs.cn',
+        dataType: "jsonp",
+        jsonp:"_",
+        data: {
+        },
+        success:function(data){
+            console.log(data);
+        }
+    });
+}
 
 </script>
 
@@ -33,7 +54,12 @@ num = setInterval(test, 100)
 Stop interval</button>
 
 <button onclick="num = setInterval(test, 100)">
-Stop interval</button>
+Start interval</button>
+
+<button onclick="jsonp_test2();">
+Jsonp test</button>
+
+
 
 </body>
 </html>

@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div id="add_box" class="container">
+  <div id="add_box" class="container" style = "display: none;">
     <div class="alert alert-danger" style="display: none;"></div>
     <div class="panel panel-success">
       <div class="panel-heading">
@@ -48,12 +48,12 @@
 
           <label>品种</label>
           <select class="form-control" name="variety" onchange="load_code_YF(this.value);">
-            <option value=0>品种</option>
+            <option value=-1>品种</option>
           </select>
 
           <label>合约</label>
           <select class="form-control" name="contract" onchange="code_YF = parseInt(this.value);">
-            <option value=0>合约</option>
+            <option value=-1>合约</option>
           </select>
           <br/>
           <br/>
@@ -71,8 +71,8 @@
           <br/>
           <br/>
           <button class="btn btn-primary btn-lg" id="btn-add" onclick="add_handle();return false;">添加</button>
-          <button class="btn btn-primary btn-lg"onclick="localStorage.clear();return false;">clear</button>
-          <button class="btn btn-primary btn-lg"onclick="console.log(localStorage);return false;">show</button>
+          <!--<button class="btn btn-primary btn-lg"onclick="localStorage.clear();return false;">clear</button>
+          <button class="btn btn-primary btn-lg"onclick="console.log(localStorage);return false;">show</button>-->
         </form>
       </div>
     </div>
@@ -107,11 +107,12 @@
 
   <div>
     <div id="status_box" class="container well">
-      <span id="sys_status">当前状态：停止获取数据</span>
-      <span id="sys_time">2014-04-05 12:12:12</span>
-      <span id="sys_text">获取数据</span>
+      <span id="sys_status">当前状态：</span>
+      <span id="sys_status_text" style="color:red;">停止获取数据</span><br/>
+      <span id="sys_status">数据获取记录：</span>
+      <span id="sys_time"  style="color:red;">2014-04-05 12:12:12</span>
+      <span id="sys_text"  style="color:red;">获取数据</span>
     </div>
-
   </div>
 
 </body>
